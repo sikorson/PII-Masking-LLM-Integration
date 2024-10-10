@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    environment:
+      - TOKEN=your_token
+      - MODEL=meta-llama/Llama-3.2-11B-Vision-Instruct
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: waitress-serve --port=8000 --call main:create_app
+
+    # setting up stding for debugging purposes
+    tty: true
+    stdin_open: true

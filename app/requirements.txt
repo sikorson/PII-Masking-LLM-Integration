@@ -1,0 +1,10 @@
+flask
+flask-restful
+huggingface-hub
+spacy
+waitress
+faker
+pytest
+
+# development - formatting
+black
